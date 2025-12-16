@@ -11,7 +11,7 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 from statsmodels.tools.tools import add_constant
 
 
-fm.fontManager.addfont('.\\TaipeiSansTCBeta-Regular.ttf')
+fm.fontManager.addfont('TaipeiSansTCBeta-Regular.ttf')
 plt.rcParams["font.size"] = 14
 plt.rcParams['font.family'] = 'Taipei Sans TC Beta'
 pd.options.mode.copy_on_write = True
@@ -104,4 +104,5 @@ if uploaded_file is not None:
         vif_data["數值特徵"] = X_vif.columns
         vif_data["變異數膨脹因子"] = [variance_inflation_factor(X_vif.values, i)
         for i in range(X_vif.shape[1])]
+
         st.dataframe(vif_data)
