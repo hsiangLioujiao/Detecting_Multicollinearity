@@ -1,6 +1,6 @@
-streamlit as st 
-numpy as np
-pandas as pd
+streamlit
+numpy
+pandas
 matplotlib.pyplot
 matplotlib
 seaborn
