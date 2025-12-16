@@ -99,10 +99,11 @@ if uploaded_file is not None:
     if _col3.button("變異數膨脹因子", use_container_width=True):
         st.image("vif.png")
         
-        X_vif = add_constant(data[feature_columns])
+        X_vif = add_constant(data[feature_columns].dropna())
         vif_data = pd.DataFrame()
         vif_data["數值特徵"] = X_vif.columns
         vif_data["變異數膨脹因子"] = [variance_inflation_factor(X_vif.values, i)
         for i in range(X_vif.shape[1])]
 
         st.dataframe(vif_data)
+
